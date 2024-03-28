@@ -30,8 +30,20 @@ h1 {
 Layout
 ================= */
 
+.container {
+    border: 1px magenta solid;
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.container-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
 header {
-    text-align: center;
+    /* text-align: center; */ /* commented this out as on desktop view we don't need it centre-aligned */
     background-color: #F8F8F8;
     padding: 2em 0;
 }
@@ -46,7 +58,8 @@ nav ul {
 }
 
 nav li {
-    margin: 0 1rem;
+    /* margin: 0 1rem; */ /* commented this and used below as in desktop view the rightmost li was creating gap from container border */
+    margin-left: 2em; /* Not 1em as we are keeping just for one side(left) whereas prev we had 1em + 1em = 2em (1 on both sides)*/
 }
 
 nav a {
