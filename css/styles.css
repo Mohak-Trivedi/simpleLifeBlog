@@ -31,7 +31,6 @@ Layout
 ================= */
 
 .container {
-    border: 1px magenta solid;
     width: 90%;
     max-width: 900px;
     margin: 0 auto;
@@ -60,6 +59,25 @@ nav ul {
 nav li {
     /* margin: 0 1rem; */ /* commented this and used below as in desktop view the rightmost li was creating gap from container border */
     margin-left: 2em; /* Not 1em as we are keeping just for one side(left) whereas prev we had 1em + 1em = 2em (1 on both sides)*/
+}
+
+/* navbar mobile view */
+@media (max-width: 675px) {
+    .container-nav {
+        flex-direction: column;
+    }
+
+    header {
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        margin: .5em 0; /* to remove the left margins and have some margin vertically instead */
+    }
 }
 
 nav a {
