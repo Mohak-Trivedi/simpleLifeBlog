@@ -4,31 +4,15 @@
     font-family: 'Ubuntu', sans-serif;
  */
 body {
+    margin: 0;
     font-family: 'Ubuntu', sans-serif;
-    margin: 0;
 }
 
-/* =================
-Typography
-================= */
-
-h1 {
-    font-family: 'Lora', serif;
-    font-size: 2rem;
-    font-weight: 400;
-    margin: 0;
+header {
+    /* text-align: center; */
+    padding: 2em 0;
+    background-color: #f8f8f8;
 }
-
-.subtitle {
-    font-size: .75rem;
-    font-weight: 700;
-    color: #1792D2;
-    margin: 0;
-}
-
-/* =================
-Layout
-================= */
 
 .container {
     width: 90%;
@@ -41,15 +25,22 @@ Layout
     justify-content: space-between;
 }
 
-header {
-    /* text-align: center; */ /* commented this out as on desktop view we don't need it centre-aligned */
-    background-color: #F8F8F8;
-    padding: 2em 0;
+h1 {
+    margin: 0;
+    font-family: 'Lora', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #143774;
 }
 
-/* navigation */
+.subtitle {
+    margin: 0;
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: #1792d2;
+}
 
-nav ul {
+ nav ul {
     list-style: none;
     padding: 0;
     display: flex;
@@ -57,11 +48,29 @@ nav ul {
 }
 
 nav li {
-    /* margin: 0 1rem; */ /* commented this and used below as in desktop view the rightmost li was creating gap from container border */
-    margin-left: 2em; /* Not 1em as we are keeping just for one side(left) whereas prev we had 1em + 1em = 2em (1 on both sides)*/
+    margin-left: 2em;
 }
 
-/* navbar mobile view */
+nav a {
+    text-decoration: none;
+    font-weight: 700;
+    color: #707070;
+    padding: 0.25em 0;
+}
+
+nav a:hover,
+nav a:focus {
+    color: #1792d2;
+}
+
+.current-page {
+    border-bottom: solid 2px #707070;
+}
+
+.current-page:hover {
+    color: #707070;
+}
+
 @media (max-width: 675px) {
     .container-nav {
         flex-direction: column;
@@ -76,26 +85,6 @@ nav li {
     }
 
     nav li {
-        margin: .5em 0; /* to remove the left margins and have some margin vertically instead */
+        margin: 0.5em 0;
     }
-}
-
-nav a {
-    text-decoration: none;
-    font-weight: 700;
-    color: #707070;
-    padding: 0.25em 0; /* Not having on sides so that the border-bottom doesn't extend. */
-}
-
-nav a:hover,
-nav a:focus {
-    color: #1792D2;
-}
-
-.current-page {
-    border-bottom: 1px solid #707070;
-}
-
-.current-page:hover {
-    color: #707070; /* Bcz we don't want hover effect on current page link */
 }
