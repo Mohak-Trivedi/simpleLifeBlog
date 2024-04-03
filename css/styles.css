@@ -12,6 +12,11 @@ body {
     color: #707070;
 }
 
+img {
+    max-width: 100%;
+    display: block;
+}
+
 /* =================
 Typography
 ================= */
@@ -82,7 +87,8 @@ Layout
     margin: 0 auto;
 }
 
-.container-nav {
+/* changed from container-nav to container-flex as both nav container and main container have exactly same styles */
+.container-flex {
     display: flex;
     justify-content: space-between;
 }
@@ -93,13 +99,21 @@ header {
 }
 
 @media (max-width: 675px) {
-    .container-nav {
+    .container-flex {
         flex-direction: column;
     }
 
     header {
         text-align: center;
     }
+}
+
+main {
+    width: 75%;
+}
+
+aside {
+    width: 20%;
 }
 
 /* navigation */
