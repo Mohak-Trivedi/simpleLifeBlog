@@ -1,18 +1,80 @@
 /*  Fonts
-    -----
-    font-family: 'Lora', serif;
-    font-family: 'Ubuntu', sans-serif;
- */
+-----
+font-family: 'Lora', serif;
+font-family: 'Ubuntu', sans-serif;
+*/
+
 body {
     margin: 0;
     font-family: 'Ubuntu', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: #707070;
 }
 
-header {
-    /* text-align: center; */
-    padding: 2em 0;
-    background-color: #f8f8f8;
+/* =================
+Typography
+================= */
+h1, h2, h3 {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    color: #143774;
 }
+
+h1 {
+    /* I need to copy-paste the below three statements for h2 and h3, so might as well just create a common selector instead as above. */
+    /* font-family: 'Lora', serif;
+    font-weight: 400;
+    color: #143774; */
+    font-size: 2rem;
+    margin: 0;
+}
+
+a {
+    color: #1792d2;
+}
+
+a:hover,
+a:focus {
+    color: #143774;
+}
+
+strong {
+    font-weight: 700;
+}
+
+.subtitle {
+    font-weight: 700;
+    color: #1792d2;
+    font-size: .75rem;
+    margin: 0;
+}
+
+.article-title {
+    font-size: 1.5rem;
+}
+
+.article-read-more,
+.article-info {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 0.875rem;
+}
+
+.article-read-more {
+    color: #1792d2;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.article-read-more:hover,
+.article-read-more:focus {
+    color: #143774;
+    text-decoration: underline;
+}
+
+/* =================
+Layout
+================= */
 
 .container {
     width: 90%;
@@ -25,22 +87,24 @@ header {
     justify-content: space-between;
 }
 
-h1 {
-    margin: 0;
-    font-family: 'Lora', serif;
-    font-size: 2rem;
-    font-weight: 400;
-    color: #143774;
+header {
+    background: #f8f8f8;
+    padding: 2em 0;
 }
 
-.subtitle {
-    margin: 0;
-    font-weight: 700;
-    font-size: 0.75rem;
-    color: #1792d2;
+@media (max-width: 675px) {
+    .container-nav {
+        flex-direction: column;
+    }
+
+    header {
+        text-align: center;
+    }
 }
 
- nav ul {
+/* navigation */
+
+nav ul {
     list-style: none;
     padding: 0;
     display: flex;
@@ -53,9 +117,9 @@ nav li {
 
 nav a {
     text-decoration: none;
-    font-weight: 700;
     color: #707070;
-    padding: 0.25em 0;
+    font-weight: 700;
+    padding: .25em 0;
 }
 
 nav a:hover,
@@ -64,7 +128,7 @@ nav a:focus {
 }
 
 .current-page {
-    border-bottom: solid 2px #707070;
+    border-bottom: 1px solid #707070;
 }
 
 .current-page:hover {
@@ -72,19 +136,11 @@ nav a:focus {
 }
 
 @media (max-width: 675px) {
-    .container-nav {
-        flex-direction: column;
-    }
-
-    header {
-        text-align: center;
-    }
-
     nav ul {
         flex-direction: column;
     }
 
     nav li {
-        margin: 0.5em 0;
+        margin: .5em 0;
     }
 }
