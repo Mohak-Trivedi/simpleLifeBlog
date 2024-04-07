@@ -114,11 +114,13 @@ header {
     }
 
     main {
-        width: 75%;
+        width: 70%;
     }
 
     aside {
-        width: 20%;
+        width: 25%;
+        min-width: 200px;
+        margin-left: 1em;
     }
 }
 
@@ -216,4 +218,11 @@ nav a:focus {
     .article-title {
         order: -1;
     }
+}
+
+/* widgets */
+.sidebar-widget {
+    border: 20px solid #EBEBEB;
+    margin-bottom: 2em;
+    padding: 1em;
 }
