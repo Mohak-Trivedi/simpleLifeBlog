@@ -9,26 +9,14 @@ body {
     font-family: 'Ubuntu', sans-serif;
     font-size: 1.125rem;
     font-weight: 300;
-    color: #707070;
 }
 
-img {
-    max-width: 100%;
-    display: block;
-}
+/* =========================
+TYPOGRAPHY
+========================= */
 
-.image-full {
-    max-height: 300px;
-    width: 100%;
-    object-fit: cover;
-    margin-bottom: 2em;
-}
-
-/* =================
-Typography
-================= */
-h1,
-h2,
+h1, 
+h2, 
 h3 {
     font-family: 'Lora', serif;
     font-weight: 400;
@@ -37,10 +25,6 @@ h3 {
 }
 
 h1 {
-    /* I need to copy-paste the below three statements for h2 and h3, so might as well just create a common selector instead as above. */
-    /* font-family: 'Lora', serif;
-    font-weight: 400;
-    color: #143774; */
     font-size: 2rem;
     margin: 0;
 }
@@ -50,7 +34,7 @@ h3 {
 }
 
 a {
-    color: #1792d2;
+    color: #1792D2;
 }
 
 a:hover,
@@ -64,8 +48,8 @@ strong {
 
 .subtitle {
     font-weight: 700;
-    color: #1792d2;
-    font-size: .75rem;
+    font-size: 0.75rem;
+    color: #1792D2;
     margin: 0;
 }
 
@@ -75,14 +59,13 @@ strong {
 
 .article-read-more,
 .article-info {
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 0.875rem;
+    font-size: .875rem;
 }
 
 .article-read-more {
-    color: #1792d2;
-    font-weight: 700;
+    color: #1792D2;
     text-decoration: none;
+    font-weight: 700;
 }
 
 .article-read-more:hover,
@@ -101,17 +84,17 @@ strong {
 }
 
 .widget-title {
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 700;
+    font-family: 'Ubuntu', sans-serif;
 }
 
-.widget-recent-post-title {
+.widget-recent-post-title { 
     color: #143774;
 }
 
-/* =================
-Layout
-================= */
+/* =========================
+LAYOUT
+========================= */
 
 .container {
     width: 90%;
@@ -119,28 +102,39 @@ Layout
     margin: 0 auto;
 }
 
-/* changed from container-nav to container-flex as both nav container and main container have exactly same styles */
 .container-flex {
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 header {
-    background: #f8f8f8;
+    background-color: #f8f8f8;
     padding: 2em 0;
     text-align: center;
     margin-bottom: 3em;
+}
+
+img {
+    max-width: 100%;
+    display: block;
 }
 
 footer {
     background: #143774;
     color: white;
     text-align: center;
-    padding: 3em 0;
+    padding: 3em;
 }
 
-@media (min-width: 675px) {
+.image-full {
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 1em;
+}
+
+@media (min-width:675px) {
     .container-flex {
         flex-direction: row;
     }
@@ -154,9 +148,13 @@ footer {
         min-width: 200px;
         margin-left: 1em;
     }
+
+    header {
+        text-align: left;
+    }
 }
 
-/* navigation */
+/* Navigation */
 
 nav ul {
     list-style: none;
@@ -169,26 +167,6 @@ nav li {
     margin-left: 2em;
 }
 
-nav a {
-    text-decoration: none;
-    color: #707070;
-    font-weight: 700;
-    padding: .25em 0;
-}
-
-nav a:hover,
-nav a:focus {
-    color: #1792d2;
-}
-
-.current-page {
-    border-bottom: 1px solid #707070;
-}
-
-.current-page:hover {
-    color: #707070;
-}
-
 @media (max-width: 675px) {
     nav ul {
         flex-direction: column;
@@ -199,12 +177,35 @@ nav a:focus {
     }
 }
 
-/* articles */
+nav a {
+    text-decoration: none;
+    font-weight: 700;
+    color: #707070;
+    padding: 0.25em 0;
+}
+
+nav a:focus,
+nav a:hover {
+    color: #1792D2;
+}
+
+.current-page {
+    border-bottom: 1px solid #707070;
+}
+
+.current-page:hover,
+.current-page:focus {
+    color: #707070
+}
+
+/* Articles */
 
 .article-featured {
     border-bottom: 1px solid #707070;
     padding-bottom: 2em;
     margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
 }
 
 .article-recent {
@@ -221,6 +222,14 @@ nav a:focus {
     order: 1;
 }
 
+.article-image {
+    order: -2;
+}
+
+.article-info {
+    order: -1;
+}
+
 @media (min-width: 675px) {
     .article-recent {
         flex-direction: row;
@@ -235,26 +244,17 @@ nav a:focus {
         width: 30%;
     }
 
-    .article-featured {
-        display: flex;
-        flex-direction: column;
-    }
-
     .article-image {
-        order: -2;
         width: 100%;
         min-height: 250px;
         object-fit: cover;
     }
-
-    .article-title {
-        order: -1;
-    }
 }
 
-/* widgets */
+/* Widgets */
+
 .sidebar-widget {
-    border: 20px solid #EBEBEB;
+    border: 20px #EBEBEB solid;
     margin-bottom: 2em;
     padding: 1em;
 }
@@ -267,8 +267,8 @@ nav a:focus {
 }
 
 .widget-recent-post:last-child {
-    border: 0;
     margin: 0;
+    border: 0;
 }
 
 .widget-image {
